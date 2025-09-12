@@ -19,7 +19,7 @@ def get_item(item_id):
     item = items.get(item_id,None) #items[item_id]
     if item:
         return jsonify(item), 200
-    return jsonify({"error": "Item not found"}), 404
+    return jsonify({"error": "Item not availabe"}), 404
 
 @app.route('/items', methods=['POST'])
 def create_item():
