@@ -6,7 +6,8 @@ app = Flask(__name__)
 items = {
     1:"data",
     2:1980,
-    3:True
+    3:True,
+    4:"cerveza"
 }
     
 
@@ -44,7 +45,8 @@ def update_item(item_id):
 def delete_item(item_id):
     global items
     items = [i for i in items if i["id"] != item_id]
-    return jsonify({"message": "Item deleted"}), 200
+    return jsonify({"message": 
+                    "Item deleted"}), 200
 
 if __name__ == "__main__":
     app.run(debug=True)
