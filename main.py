@@ -6,7 +6,8 @@ app = Flask(__name__)
 items = {
     1:"data",
     2:1980,
-    3:True
+    3:True,
+    4:"cerveza"
 }
     
 
