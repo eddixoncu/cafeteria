@@ -46,5 +46,11 @@ def delete_item(item_id):
     items = [i for i in items if i["id"] != item_id]
     return jsonify({"message": "Item deleted"}), 200
 
+
+@app.route("/products", methods=["GET"])
+def get_products():
+    return ["coffee","beer"]
+
+
 if __name__ == "__main__":
     app.run(debug=True)
