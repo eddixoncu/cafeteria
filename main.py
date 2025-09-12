@@ -20,7 +20,7 @@ def get_item(item_id):
     item = items.get(item_id,None) #items[item_id]
     if item:
         return jsonify(item), 200
-    return jsonify({"error": "Item not found"}), 404
+    return jsonify({"error": "Item not availabe"}), 404
 
 @app.route('/items', methods=['POST'])
 def create_item():
@@ -47,6 +47,12 @@ def delete_item(item_id):
     items = [i for i in items if i["id"] != item_id]
     return jsonify({"message": 
                     "Item deleted"}), 200
+
+
+@app.route("/products", methods=["GET"])
+def get_products():
+    return ["coffee","beer"]
+
 
 if __name__ == "__main__":
     app.run(debug=True)
